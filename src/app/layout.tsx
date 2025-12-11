@@ -26,9 +26,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased border-5 border-blue-500 min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <header>
+        <header className="bg-blue-300">
           <nav className="flex">
             <Link href="/" className="p-2 rounded hover:bg-gray-100">
               메인
@@ -38,7 +38,7 @@ export default function RootLayout({
             </Link>
           </nav>
         </header>
-        <main className="border-5 border-green-500 flex-1 flex flex-col">{children}</main>
+        <main className="flex-1 flex flex-col">{children}</main>
         <footer className="border-5 border-red-500 text-center p-2">푸터</footer>
       </body>
     </html>
