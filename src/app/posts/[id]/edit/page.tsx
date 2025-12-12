@@ -2,12 +2,14 @@
 
 import { apiFetch } from "@/lib/backend/client"; 
 import { PostWithContentDto } from "@/type/post";
-import { useRouter } from "next/navigation";
-import { use, useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
-export default function Page({ params }: { params:Promise<{id:number}>}){
+
+export default function Page(){
   const router  = useRouter();
-  const { id } = use(params);
+  const { id: idStr } = useParams<{ id: string }>();
+  const id = parseInt(idStr);
   const [post, setPost] = useState<PostWithContentDto | null>(null);
 
   useEffect(() => {

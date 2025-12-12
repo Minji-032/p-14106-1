@@ -15,15 +15,15 @@ export default function Page() {
 
   return (
     <>
-      <h1 className="underline">글 목록</h1>
+      <h1 className="bg-red-200">글 목록</h1>
 
       {posts.length == 0 && <div>글이 없습니다.</div>}
 
       {posts.length > 0 && (
         <ul>
            {posts.map((post) => (
-            <li key={post.id}>
-              <Link href={`/posts/${post.id}`}>{post.title}</Link>
+            <li key={post.id} className="p-1">
+              - <Link href={`/posts/${post.id}`}>{post.title}</Link>
             </li>
           ))}
         </ul>
